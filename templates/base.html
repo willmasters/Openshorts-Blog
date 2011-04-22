@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>~ Open Shorts ~ {{ entry.title }}</title>
+        <link rel="stylesheet" href="http://media.openshorts.eu/css/openblog.css" type="text/css" media="all" charset="utf-8">
+	<link rel="home" title="Home" href="/">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss/">
+    <script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAASyNgDUaWD7Fj4SSIvgppwRRDdLxYgvAFmxv1a93g1t5gi50VRBR9AyunIxx8OU-drEHCiwrUn_CO5g"></script> 
+    <script type="text/javascript" src="http://media.openshorts.eu/js/jquery-1.3.2.min.js"></script> 
+    <script type="text/javascript" src="http://media.openshorts.eu/js/jquery.gfeed.js"></script> 
+
+    <script type="text/javascript">
+        $(document).ready(function() { 
+            $('#feedcont').gFeed({  
+                url: 'http://toolserver.org/~skagedal/feeds/qotd.xml', max: 1
+            });     
+        });
+    </script>
+</head>
+<body>
+<!-- wrap starts here -->
+<div id="wrap-out"><a href="/"><img src="http://media.openshorts.eu/images/jorlogo.gif"/ border="0"></a><div id="wrap">
+
+<div id="header">
+  <!--h1 id="logo-text"><a href="/">Open Shorts</a></h1-->
+  <p id="intro">
+    <script type="text/javascript">
+      var currentTime = new Date()
+      var day = currentTime.getDate()
+      var month = currentTime.getMonth() + 1
+      var year = currentTime.getFullYear()
+      document.write(day + "/" + month + "/" + year)
+    </script>
+  Guaranteed Pirate Content
+  </p>
+
+  <div id="nav">
+    <ul>
+        <li class="latest"><a href="/">Latest posts</a></li>
+        <li class="archives"><a href="/archives/">Blog archives</a></li>
+        <li class="about"><a href="/about/">About</a></li>
+        <li class="feed"><a href="/rss/">RSS feed</a></li>
+    </ul>
+  </div> <!-- end #navigation -->
+</div> <!-- end #header -->
+
+<!-- content-wrap starts -->
+<div id="content-wrap">
+
+  <div id="main">
+{% block home %}{% endblock %}	
+{% block archive %}{% endblock %}
+{% block detail %}{% endblock %}
+{% block bycategory %}{% endblock %}
+{% block about %}{% endblock %}
+  </div>
+
+  <!-- sidebar starts -->
+  <div id="sidebar">
+   <h3>Categories</h3> 
+      <ul> 
+      {% for category in categories %}
+        <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
+        {% endfor %}
+        </ul> 
+    <h3>What's it about?</h3> 
+     
+    <p>Open Shorts is an occasional weblog focused on discussing matters relating to the changing modern
+    world, be they digital or ecological</p> 
+    <p> Please send us your stories, great or small.</p>
+    <p> info (at) openshorts (dot) eu </p>
+    
+    <h3>We are reading</h3>
+    <ul> 
+      <li><a href="http://www.treehugger.com/">Treehugger</a></li>
+      <li><a href="http://www.teleread.org/">Teleread</a></li> 
+      <li><a href="http://www.readwriteweb.com/">Read Write Web</a></li> 
+      <li><a href="http://www.defectivebydesign.org/">Defective by Design</a></li>
+      <li><a href="http://www.takepart.com/news/">Take Part</a></li>  
+      <li><a href="http://www.torrentfreak.com/">Torrentfreak</a></li> 
+      <li><a href="http://michaelmoore.com/words/latest-news/">Michael Moore</a></li> 
+      <li><a href="http://www.naomiklein.org/articles/">Naomi Klein</a></li> 
+      <li><a href="http://www.openculture.com/">Open Culture</a></li>
+      <li><a href="http://ecogeek.org/">EcoGeek</a></li>
+      <li><a href="http://cleantechnica.com/">CleanTechnica</a></li>  
+    </ul> 
+    
+  </div><!-- end #sidebar -->
+<!-- content-wrap ends-->	
+</div>
+<!-- footer starts here -->	
+<div id="footer-wrap"><div id="footer-content">	
+<div class="col float-left space-sep">
+<h3>Resources</h3>
+  <ul class="col-list">				
+  	<li><a href="http://www.opensourcecinema.org">Open Source Cinema - <span>Remix your own videos</span></a></li>
+  	<li><a href="http://www.eff.org/">EFF - <span>Electronic Frontier Foundation</span></a></li>
+  	<li><a href="http://www.legaltorrents.com/">Legal Torrents - <span>It says it on the tin</span></a></li>
+  	<li><a href="http://www.snagfilms.com/">Snag Films - <span>Free Documentaries</span></a></li>						
+  </ul>
+</div>
+
+<div class="col float-left">	
+<h3>Quote of the day</h3>			
+  <p id="feedcont"></p>
+</div>		
+
+<div class="col2 float-right">
+<h3>About the website</h3>		
+  <p>
+  &copy; copyright 2010 <strong>Open Shorts EU</strong><br /> 
+  Powered by: <strong>Django</strong><br /> 
+  Valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | 
+  <a href="http://validator.w3.org/check/referer">XHTML</a>
+  </p>
+</div>		
+			
+</div></div>
+<div class="clearer"></div>
+
+<!-- #footer ends here -->
+<!-- wrap ends here -->
+</div></div>
+{% block comments %}{% endblock %}
+</body>
+</html>
+  <!-- main ends -->	

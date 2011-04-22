@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block home %}
+        {% for entry in entry_list %}
+            {% ifequal entry.status 1 %}
+		<a href="{{ entry.get_absolute_url }}"><h2>{{ entry.title }}</h2></a>
+		<p class="post-info">{{ entry.pub_date|date:"f a F j, Y" }}
+		| <b>Categories:</b> {% for category in entry.categories.all %}<a href="{{ category.get_absolute_url }}">{{ category.title }}</a>{% endfor %}
+		</p>
+		{% if entry.excerpt_html %}
+			{{ entry.excerpt_html|safe }}
+		{% else %}
+			{{ entry.body_html|truncatewords_html:"50"|safe }}
+		{% endif %}
+		<p><a href="{{ entry.get_absolute_url }}">Read full entry</a></p>
+            {% endifequal %}
+	{% endfor %}
+{% endblock %}
+
+ 

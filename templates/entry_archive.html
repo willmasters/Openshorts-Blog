@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block archive %}
+        {% for entry in entry_list %}
+            {% ifequal entry.status 1 %}
+		<p><a href="{{ entry.get_absolute_url }}">
+		<h3>{{ entry.pub_date|date:"F j, Y" }} {{ entry.title }}</h3>
+		</a></p>
+            {% endifequal %}
+	{% endfor %}
+{% endblock %}
