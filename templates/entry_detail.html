@@ -6,7 +6,7 @@
 	{{ entry.excerpt_html|safe }}
 	{{ entry.body_html|safe }}
 	{% ifequal entry.enable_comments 1 %}
-	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/[your-discus-account]/embed.js"></script><noscript><a href="http://disqus.com/forums/[your-discus-account]/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/[your-disqus-account]/embed.js"></script><noscript><a href="http://disqus.com/forums/[your-disqus-account]/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	{% endifequal %}
 {% endblock %}
 
@@ -22,7 +22,7 @@
 			query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
 		}
 		}
-		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/[your-discus-account]/get_num_replies.js' + query + '"></' + 'script>');
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/[your-disqus-account]/get_num_replies.js' + query + '"></' + 'script>');
 	})();
 	//]]>
 	</script>
